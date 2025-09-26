@@ -1,0 +1,19 @@
+{
+  "hero": {
+    "title": "Engenheiro de Software & UI/UX",
+    "description": "Sou Miguel Lemes, um Engenheiro de Software com forte experiência em Frontend (React, Next.js, TypeScript, TailwindCSS) e paixão por Web Design, UI/UX e Product Design. Projeto e construo produtos digitais escaláveis e centrados no usuário. Você pode me encontrar no LinkedIn, ou dizer olá em miguellemes005@gmail.com.",
+    "resumeButton": "Currículo",
+    "social": {
+      "github": "Perfil GitHub",
+      "linkedin": "Perfil LinkedIn",
+      "twitter": "Perfil X/Twitter",
+      "instagram": "Perfil Instagram",
+      "email": "Enviar Email"
+    }
+  },
+  "language": {
+    "switch": "Alterar Idioma",
+    "pt": "Português",
+    "en": "English"
+  }
+}
