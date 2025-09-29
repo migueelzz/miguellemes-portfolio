@@ -2,6 +2,7 @@ import { SocialIcon } from "@/components/ui/social-icon"
 import { LocationTime } from "@/components/ui/location-time"
 import { LanguageSwitcher } from "@/components/ui/language-switcher"
 import { ClickableEmail } from "@/components/ui/clickable-email"
+import { AvailabilityIndicator } from "@/components/ui/availability-indicator"
 import { ArrowUpRight } from "lucide-react"
 import { Separator } from "./ui/separator"
 import { cn } from "@/lib/utils"
@@ -10,15 +11,6 @@ import { useTranslation } from 'react-i18next'
 
 export function PortfolioHero() {
   const { t, i18n } = useTranslation()
-  
-  const handleScheduleMeet = () => {
-    // Replace with your actual calendar link
-    window.open("https://calendly.com/migueelzz", "_blank")
-  }
-
-  const handleEmailClick = () => {
-    window.location.href = "mailto:miguellemes005@gmail.com"
-  }
 
   const handleDownloadCV = () => {
     // Different CV files based on language
@@ -55,18 +47,18 @@ export function PortfolioHero() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f7f7f7] flex flex-col">
+    <div className="min-h-screen bg-[#f7f7f7] flex flex-col overflow-y-auto">
       {/* Header with location/time and language switcher */}
-      <header className="w-full px-4 pt-4 lg:px-8 flex justify-end items-center">
-        <LanguageSwitcher />
+      <header className="w-full px-4 pt-4 lg:px-8 flex justify-end items-center gap-4">
         {/* <LocationTime /> */}
+        <LanguageSwitcher />
       </header>
 
       {/* Main content */}
       <main className="flex-1 flex items-center justify-center px-8">
         <div className="w-full max-w-xl lg:max-w-3xl mx-auto">
           {/* Unified Layout with Flexbox */}
-          <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-between gap-8 lg:gap-8">
+          <div className="select-none flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-between gap-8">
             {/* Avatar */}
             <div className="flex justify-center lg:justify-start">
               <img
@@ -78,7 +70,10 @@ export function PortfolioHero() {
 
             {/* Content */}
             <div className="flex flex-col items-center lg:items-start gap-6">
-              <div className="space-y-4 lg:space-y-6 text-center lg:text-left">
+              <div className="space-y-2 text-center lg:text-left">
+                {/* Availability Indicator */}
+                <AvailabilityIndicator />
+                
                 <h1 className="font-serif text-headline lg:text-display text-foreground">
                   {t('hero.title')}
                 </h1>
@@ -98,7 +93,7 @@ export function PortfolioHero() {
                 </p>
               </div>
 
-              <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-4 w-full">
+              <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-4 w-full pb-8">
                 {/* Resume CV Button */}
                 <button
                   onClick={handleDownloadCV}
@@ -129,21 +124,23 @@ export function PortfolioHero() {
                     href="https://x.com/_migueelzz"
                     label={t('hero.social.twitter')}
                   />
-                  <SocialIcon
-                    icon={IconBrandGithub}
-                    href="https://github.com/migueelzz"
-                    label={t('hero.social.github')}
-                  />
+                  
                   <SocialIcon
                     icon={IconBrandLinkedin}
                     href="https://www.linkedin.com/in/migueelzz"
                     label={t('hero.social.linkedin')}
                   />
+
                   <SocialIcon
+                    icon={IconBrandGithub}
+                    href="https://github.com/migueelzz"
+                    label={t('hero.social.github')}
+                  />
+                  {/* <SocialIcon
                     icon={IconBrandInstagram}
                     href="https://www.instagram.com/_migueelzz/"
                     label={t('hero.social.instagram')}
-                  />
+                  /> */}
                 </div>
               </div>
             </div>

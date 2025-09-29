@@ -1,8 +1,9 @@
 {
   "hero": {
     "title": "Software Engineer & UI/UX",
-    "description": "I'm Miguel Lemes, a Software Engineer with strong experience in Frontend (React, Next.js, TypeScript, TailwindCSS) and a passion for Web Design, UI/UX and Product Design. I design and build scalable, user-centered digital products. You can find me on LinkedIn, or say hello at miguellemes005@gmail.com.",
+    "description": "I'm Miguel Lemes, a software engineer passionate about technology and design, creating digital products that make an impact. You can find me on the networks below or reach me by email at miguellemes005@gmail.com.",
     "resumeButton": "Resume CV",
+    "availability": "Available for opportunities",
     "social": {
       "github": "GitHub Profile",
       "linkedin": "LinkedIn Profile",

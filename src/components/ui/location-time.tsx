@@ -23,7 +23,7 @@ export function LocationTime() {
   }, [])
 
   return (
-    <div className="flex-shrink-0 inline-flex items-center gap-2 text-caption text-muted-foreground font-sans text-xs lg:text-base">
+    <div className="flex-shrink-0 inline-flex items-center gap-2 text-caption text-muted-foreground font-sans text-sm">
       <Clock size={14} strokeWidth={1.5} />
       <span>Lins, Brazil • GMT-3 • {time}</span>
     </div>
