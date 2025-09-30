@@ -1,5 +1,4 @@
 import { SocialIcon } from "@/components/ui/social-icon"
-import { LocationTime } from "@/components/ui/location-time"
 import { LanguageSwitcher } from "@/components/ui/language-switcher"
 import { ClickableEmail } from "@/components/ui/clickable-email"
 import { AvailabilityIndicator } from "@/components/ui/availability-indicator"
