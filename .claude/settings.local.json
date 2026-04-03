@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:reactbits.dev)",
+      "WebFetch(domain:tina.io)",
+      "Bash(bun add:*)",
+      "Bash(bun pm:*)",
+      "Bash(bunx shadcn@latest add \"https://reactbits.dev/registry/ts-tailwind/BlurText.json\" --overwrite)",
+      "Bash(bunx shadcn@latest add @react-bits/BlurText-TS-TW)",
+      "Bash(bun run:*)"
+    ]
+  }
+}

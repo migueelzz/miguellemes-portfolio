@@ -12,6 +12,42 @@
       "email": "Send Email"
     }
   },
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "blog": "Blog"
+  },
+  "sections": {
+    "experience": "Experience",
+    "projects": "Projects",
+    "writing": "Writing",
+    "viewAll": "View all",
+    "viewAllGithub": "View all projects on GitHub",
+    "readAllPosts": "Read all posts",
+    "current": "Current"
+  },
+  "blog": {
+    "title": "Writing",
+    "subtitle": "thoughts on software, AI, and things I find interesting.",
+    "searchPlaceholder": "Search posts...",
+    "allTags": "All",
+    "noResults": "No posts found.",
+    "clearFilters": "Clear filters",
+    "backHome": "Home",
+    "allPosts": "All posts",
+    "share": "Share",
+    "copyLink": "Copy link",
+    "copied": "Copied!",
+    "post": "post",
+    "posts": "posts",
+    "resultsFor": "results for",
+    "resultFor": "result for",
+    "taggedWith": "tagged"
+  },
+  "footer": {
+    "builtWith": "Built with React & Tailwind."
+  },
   "language": {
     "switch": "Switch Language",
     "pt": "Português",

@@ -4,112 +4,92 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Minimalist Portfolio Design System
-Sophisticated neutral palette with elegant typography
-*/
-
 @layer base {
   :root {
-    /* Sophisticated neutral palette */
-    --background: 0 0% 99.5%;
-    --foreground: 0 0% 15%;
-    
-    /* Elevated surfaces */
+    /* Light mode — warm neutral */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 9%;
+
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 15%;
-    
+    --card-foreground: 0 0% 9%;
+
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 15%;
-    
-    /* Primary brand colors - deep charcoal */
-    --primary: 0 0% 20%;
+    --popover-foreground: 0 0% 9%;
+
+    --primary: 0 0% 9%;
     --primary-foreground: 0 0% 98%;
-    
-    /* Secondary - warm gray */
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 20%;
-    
-    /* Muted tones */
-    --muted: 0 0% 95%;
+
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 94%;
     --muted-foreground: 0 0% 45%;
-    
-    /* Accent - subtle warmth */
-    --accent: 0 0% 94%;
-    --accent-foreground: 0 0% 20%;
-    
-    /* States */
+
+    --accent: 0 0% 92%;
+    --accent-foreground: 0 0% 9%;
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    
-    /* Borders and inputs */
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 20%;
-    
-    /* Social colors */
-    --github: 0 0% 20%;
+
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 0 0% 9%;
+
+    /* Social */
+    --github: 0 0% 9%;
     --linkedin: 201 100% 35%;
     --email: 142 71% 45%;
-    
-    /* Interactive states */
-    --hover: 0 0% 92%;
-    --active: 0 0% 88%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode — pure dark neutral, not blue-tinted */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 93%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 93%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 93%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 0 0% 93%;
+    --primary-foreground: 0 0% 4%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 93%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 55%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 93%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 40%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 0 0% 70%;
+
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 80%;
+    --sidebar-primary: 0 0% 93%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 80%;
+    --sidebar-border: 0 0% 14%;
+    --sidebar-ring: 0 0% 50%;
   }
 }
 
@@ -118,34 +98,62 @@ Sophisticated neutral palette with elegant typography
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     font-weight: 300;
     line-height: 1.6;
     letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-  
-  /* Typography system */
+
   .font-serif {
     font-family: 'Crimson Text', Georgia, serif;
   }
-  
+
   .font-sans {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
-  
-  /* Smooth transitions */
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 100px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.4);
+  }
+
+  /* Selection */
+  ::selection {
+    background: hsl(var(--foreground) / 0.12);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer utilities {
   .transition-elegant {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
-  /* Hover states */
+
   .hover-lift:hover {
     transform: translateY(-1px);
   }
-  
-  /* Focus styles */
+
   .focus-elegant:focus {
     outline: none;
     box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);

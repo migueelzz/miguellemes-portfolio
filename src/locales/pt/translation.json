@@ -12,6 +12,42 @@
       "email": "Enviar Email"
     }
   },
+  "nav": {
+    "about": "Sobre",
+    "experience": "Experiência",
+    "projects": "Projetos",
+    "blog": "Blog"
+  },
+  "sections": {
+    "experience": "Experiência",
+    "projects": "Projetos",
+    "writing": "Artigos",
+    "viewAll": "Ver todos",
+    "viewAllGithub": "Ver todos os projetos no GitHub",
+    "readAllPosts": "Ver todos os posts",
+    "current": "Atual"
+  },
+  "blog": {
+    "title": "Artigos",
+    "subtitle": "pensamentos sobre software, IA e coisas que acho interessante.",
+    "searchPlaceholder": "Pesquisar posts...",
+    "allTags": "Todos",
+    "noResults": "Nenhum post encontrado.",
+    "clearFilters": "Limpar filtros",
+    "backHome": "Início",
+    "allPosts": "Todos os posts",
+    "share": "Compartilhar",
+    "copyLink": "Copiar link",
+    "copied": "Copiado!",
+    "post": "post",
+    "posts": "posts",
+    "resultsFor": "resultados para",
+    "resultFor": "resultado para",
+    "taggedWith": "com tag"
+  },
+  "footer": {
+    "builtWith": "Feito com React & Tailwind."
+  },
   "language": {
     "switch": "Alterar Idioma",
     "pt": "Português",
