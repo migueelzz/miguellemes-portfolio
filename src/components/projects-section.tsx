@@ -1,4 +1,4 @@
-import { projects } from "@/data/projects";
+import { usePinnedProjects } from "@/hooks/use-pinned-projects";
 import { AnimatedSection, StaggerChildren, fadeUpItem } from "@/components/animated-section";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 
 export function ProjectsSection() {
   const { t } = useTranslation();
-  const featured = projects.filter((p) => p.featured);
+  const featured = usePinnedProjects();
 
   return (
     <AnimatedSection id="projects" className="py-24 px-6">
@@ -25,12 +25,12 @@ export function ProjectsSection() {
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
-              "ml-4 flex-shrink-0 flex items-center gap-1.5 text-sm text-muted-foreground",
+              "group ml-4 flex-shrink-0 flex items-center gap-1.5 text-sm text-muted-foreground",
               "hover:text-foreground transition-colors duration-200"
             )}
           >
             {t("sections.viewAll")}
-            <ArrowUpRight className="size-3.5" />
+            <ArrowUpRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
         </div>
 
@@ -55,6 +55,7 @@ export function ProjectsSection() {
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
+                  onError={(e) => (e.currentTarget.style.visibility = "hidden")}
                 />
                 {/* Overlay with links */}
                 <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">

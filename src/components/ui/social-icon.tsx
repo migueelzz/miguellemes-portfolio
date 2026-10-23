@@ -23,7 +23,9 @@ export function SocialIcon({
       className={cn(
         "size-11 inline-flex items-center justify-center rounded-xl",
         "bg-transparent border-2 border-zinc-300/20",
-        "text-foreground hover:bg-muted hover:text-foreground/80",
+        "text-foreground hover:bg-muted hover:border-zinc-300/40",
+        "transition-all duration-200 ease-out hover:-translate-y-0.5 active:translate-y-0 active:scale-95",
+        "[&>svg]:transition-transform [&>svg]:duration-200 hover:[&>svg]:scale-110",
         className
       )}
     >

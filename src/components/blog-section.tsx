@@ -39,12 +39,12 @@ export function BlogSection() {
           <Link
             to="/blog"
             className={cn(
-              "ml-4 flex-shrink-0 flex items-center gap-1.5 text-sm text-muted-foreground",
+              "group ml-4 flex-shrink-0 flex items-center gap-1.5 text-sm text-muted-foreground",
               "hover:text-foreground transition-colors duration-200"
             )}
           >
             {t("sections.viewAll")}
-            <ArrowUpRight className="size-3.5" />
+            <ArrowUpRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
 
@@ -60,7 +60,7 @@ export function BlogSection() {
                   "transition-all duration-200"
                 )}
               >
-                <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-mono whitespace-nowrap pt-0.5 min-w-[90px]">
+                <div className="flex items-center gap-1.5 text-xs text-muted-foreground tabular-nums whitespace-nowrap pt-0.5 min-w-[90px]">
                   <CalendarDays className="size-3" />
                   {formatDate(post.date, i18n.language)}
                 </div>
@@ -70,7 +70,7 @@ export function BlogSection() {
                     <h3 className="font-medium text-foreground text-sm leading-snug group-hover:text-foreground/80 transition-colors">
                       {post.title}
                     </h3>
-                    <ArrowUpRight className="size-3.5 text-muted-foreground flex-shrink-0 mt-0.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ArrowUpRight className="size-3.5 text-muted-foreground flex-shrink-0 mt-0.5 opacity-0 -translate-x-1 translate-y-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-200" />
                   </div>
                   {post.description && (
                     <p className="mt-1 text-xs text-muted-foreground leading-relaxed line-clamp-2">

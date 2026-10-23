@@ -69,12 +69,19 @@ src/
 
 ## Deployment
 
-The project can be deployed to any static hosting service:
+Deployed on **Vercel**. The `api/` folder holds edge functions that keep the site in sync with GitHub without a redeploy:
 
-- **Vercel**: `vercel --prod`
-- **Netlify**: Connect your repository
-- **GitHub Pages**: Use GitHub Actions
-- **Any static host**: Build with `npm run build`
+| Endpoint | What it does | Refresh |
+| --- | --- | --- |
+| `/api/og` | Link preview image (Open Graph), using the current GitHub avatar | daily |
+| `/api/pinned` | Repos pinned on the GitHub profile, shown in the Projects section | hourly |
+| `/api/cv?lang=en\|pt` | Latest CV PDF from `migueelzz/migueelzz` → `cv/cv-miguel-lemes-{en,pt}.pdf` | 5 min |
+
+Required env var on Vercel: `GITHUB_TOKEN` (a fine-grained token with read-only public access is enough).
+Optional: `CV_REPO`, `CV_BRANCH`, `CV_DIR` to read the CV from somewhere else.
+
+If GitHub is unavailable, the Projects section falls back to `src/data/projects.ts` and the CV to the PDFs in `public/`.
+Entries in `src/data/projects.ts` also override the title/description/tech of a pinned repo with the same URL.
 
 ## Customization
 

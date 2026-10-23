@@ -19,9 +19,10 @@ export function PortfolioHero() {
   const { t, i18n } = useTranslation();
 
   const handleDownloadCV = () => {
+    // /api/cv serves the latest PDF from GitHub (see api/cv.ts).
     const cvFiles = {
-      en: { href: "/cv-miguel-lemes-en.pdf", download: "Miguel-Lemes-CV-English.pdf" },
-      pt: { href: "/cv-miguel-lemes-pt.pdf", download: "Miguel-Lemes-CV-Portugues.pdf" },
+      en: { href: "/api/cv?lang=en", download: "Miguel-Lemes-CV-English.pdf" },
+      pt: { href: "/api/cv?lang=pt", download: "Miguel-Lemes-CV-Portugues.pdf" },
     };
 
     const currentLang = i18n.language as "en" | "pt";
@@ -54,7 +55,11 @@ export function PortfolioHero() {
               className="flex justify-center lg:justify-start flex-shrink-0"
               {...fadeUp(0.1)}
             >
-              <div className="relative">
+              <motion.div
+                className="relative"
+                whileHover={{ scale: 1.04, rotate: -2 }}
+                transition={{ type: "spring", stiffness: 300, damping: 18 }}
+              >
                 <img
                   src="https://github.com/migueelzz.png"
                   alt="Miguel Lemes"
@@ -62,7 +67,7 @@ export function PortfolioHero() {
                 />
                 {/* Subtle glow */}
                 <div className="absolute inset-0 rounded-[28px] ring-1 ring-inset ring-white/10" />
-              </div>
+              </motion.div>
             </motion.div>
 
             {/* Content */}
@@ -75,6 +80,7 @@ export function PortfolioHero() {
 
                 {/* Name / Title with BlurText */}
                 <BlurText
+                  as="h1"
                   text={t("hero.title")}
                   delay={60}
                   animateBy="words"
@@ -110,21 +116,20 @@ export function PortfolioHero() {
                 <button
                   onClick={handleDownloadCV}
                   className={cn(
-                    "relative flex-shrink-0 inline-flex items-center justify-center px-8 py-3 rounded-[2rem]",
-                    "bg-gradient-to-b from-zinc-800 to-zinc-900 text-white font-medium text-base",
-                    "dark:from-zinc-100 dark:to-zinc-200 dark:text-zinc-900",
+                    "group relative flex-shrink-0 inline-flex items-center justify-center px-8 py-3 rounded-[2rem]",
+                    "bg-zinc-900 text-white font-medium text-base",
+                    "dark:bg-zinc-100 dark:text-zinc-900",
                     "shadow-[0_4px_16px_0_rgba(0,0,0,0.15)]",
                     "border border-zinc-700/50 dark:border-zinc-300/50",
                     "hover:shadow-[0_6px_20px_0_rgba(0,0,0,0.20)] hover:scale-[1.02]",
                     "transition-all duration-200 ease-out",
-                    "before:content-[''] before:absolute before:inset-0 before:rounded-[2rem] before:bg-gradient-to-b before:from-white/10 before:to-transparent before:opacity-50",
                     "active:scale-[0.98] w-full lg:w-auto"
                   )}
                 >
                   <span className="relative z-10 font-medium tracking-wide">
                     {t("hero.resumeButton")}
                   </span>
-                  <ArrowUpRight className="size-4 ml-2 relative z-10" />
+                  <ArrowUpRight className="size-4 ml-2 relative z-10 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </button>
 
                 {/* Desktop Separator */}

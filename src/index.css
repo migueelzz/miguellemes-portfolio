@@ -159,3 +159,32 @@
     box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
   }
 }
+
+/* GitHub contributions: cells grow in as a wave once the section is visible */
+.contribution-cell {
+  opacity: 0;
+  transform: scale(0.4);
+  transition:
+    opacity 0.4s ease-out,
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contribution-cell[data-revealed="true"] {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.contribution-cell[data-revealed="true"]:hover {
+  transform: scale(1.35);
+  transition-delay: 0ms !important;
+  transition-duration: 0.15s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contribution-cell,
+  .contribution-cell[data-revealed="true"]:hover {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

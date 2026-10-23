@@ -25,7 +25,8 @@
     "viewAll": "View all",
     "viewAllGithub": "View all projects on GitHub",
     "readAllPosts": "Read all posts",
-    "current": "Current"
+    "current": "Current",
+    "contributions": "Contributions"
   },
   "blog": {
     "title": "Writing",
@@ -52,5 +53,13 @@
     "switch": "Switch Language",
     "pt": "Português",
     "en": "English"
+  },
+  "contributions": {
+    "summary_one": "{{count}} contribution in the last year",
+    "summary_other": "{{count}} contributions in the last year",
+    "day_one": "{{count}} contribution on {{date}}",
+    "day_other": "{{count}} contributions on {{date}}",
+    "less": "Less",
+    "more": "More"
   }
 }

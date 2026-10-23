@@ -21,22 +21,26 @@ export function ExperienceSection() {
 
         <StaggerChildren className="relative">
           {/* Timeline vertical line */}
-          <div className="absolute left-[7px] top-2 bottom-0 w-px bg-border hidden sm:block" />
+          <motion.div
+            className="absolute left-[7px] top-2 bottom-0 w-px bg-border hidden sm:block origin-top"
+            variants={{ hidden: { scaleY: 0 }, visible: { scaleY: 1, transition: { duration: 1.4, ease: [0.22, 1, 0.36, 1] } } }}
+          />
 
           <div className="space-y-12">
             {experiences.map((exp, i) => (
               <motion.div
                 key={i}
                 variants={fadeUpItem}
-                className="relative sm:pl-10"
+                className="group relative sm:pl-10"
               >
                 {/* Timeline dot */}
                 <div
                   className={cn(
                     "absolute left-0 top-1.5 size-3.5 rounded-full border-2 hidden sm:block",
+                    "transition-transform duration-300 group-hover:scale-125",
                     exp.current
                       ? "bg-foreground border-foreground"
-                      : "bg-background border-muted-foreground/40"
+                      : "bg-background border-muted-foreground/40 group-hover:border-foreground/60"
                   )}
                 />
 
@@ -86,7 +90,7 @@ export function ExperienceSection() {
                           {t("sections.current")}
                         </span>
                       )}
-                      <span className="text-xs text-muted-foreground font-mono whitespace-nowrap">
+                      <span className="text-xs text-muted-foreground tabular-nums whitespace-nowrap">
                         {exp.period}
                       </span>
                     </div>

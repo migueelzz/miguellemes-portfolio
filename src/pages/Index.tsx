@@ -1,6 +1,7 @@
 import { PortfolioHero } from "@/components/portfolio-hero";
 import { ExperienceSection } from "@/components/experience-section";
 import { ProjectsSection } from "@/components/projects-section";
+import { GithubContributions } from "@/components/github-contributions";
 import { BlogSection } from "@/components/blog-section";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -12,6 +13,7 @@ const Index = () => {
       <PortfolioHero />
       <ExperienceSection />
       <ProjectsSection />
+      <GithubContributions />
       <BlogSection />
       <Footer />
     </div>

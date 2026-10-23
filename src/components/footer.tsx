@@ -15,7 +15,11 @@ export function Footer() {
             href="https://github.com/migueelzz"
             target="_blank"
             rel="noopener noreferrer"
-            className={cn("hover:text-foreground transition-colors")}
+            className={cn(
+              "relative hover:text-foreground transition-colors",
+              "after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-full after:bg-current",
+              "after:origin-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
+            )}
           >
             GitHub
           </a>
@@ -23,7 +27,11 @@ export function Footer() {
             href="https://www.linkedin.com/in/migueelzz"
             target="_blank"
             rel="noopener noreferrer"
-            className={cn("hover:text-foreground transition-colors")}
+            className={cn(
+              "relative hover:text-foreground transition-colors",
+              "after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-full after:bg-current",
+              "after:origin-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
+            )}
           >
             LinkedIn
           </a>
@@ -31,7 +39,11 @@ export function Footer() {
             href="https://x.com/_migueelzz"
             target="_blank"
             rel="noopener noreferrer"
-            className={cn("hover:text-foreground transition-colors")}
+            className={cn(
+              "relative hover:text-foreground transition-colors",
+              "after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-full after:bg-current",
+              "after:origin-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
+            )}
           >
             X / Twitter
           </a>
